@@ -2,11 +2,27 @@
     <head>
         <title>의견건의</title>
         <meta name="author" content="박상하">
+        <style>
+            th, td {
+                border: 1px solid black;
+            }
+        </style>
     </head>
-    <body>
-        asdf
+    <body>       
         <table>
-            
+            <thead>
+                <tr><th>유틸리티</th><th>콘비니언트</th></tr>
+            </thead>
+            <tbody>
+                <tr><td id="utilcell"></td><td id="convcell"></td></tr>
+                
+            </tbody>    
         </table>
+        <script>   
+            const params = new URLSearchParams(window.location.search);
+            document.getElementById("utilcell").textContent = params.get("utility");
+            document.getElementById("convcell").textContent = params.get("convenient");
+        </script>
     </body>
+    
 </doctype>
