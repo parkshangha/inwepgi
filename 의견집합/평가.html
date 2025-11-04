@@ -1,0 +1,215 @@
+<doctype html>
+    <head>
+        <title>평가</title>
+        <meta name="description" content="전체적인 서비스에 대한 평가를 위한 html코드">
+        <style>
+            
+            dt {
+                font-size: larger;
+                font-weight: 600;
+            }
+            * { /*index.html과 95% 정도는 style이 같음*/
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Noto Sans KR", "Nanum Gothic", "나눔고딕", NanumGothic, "돋움", dotum, Helvetica, sans-serif, AppleGothic;;
+            }
+
+            body, html {
+            height: 100%;
+            }
+
+            header, section, footer {
+            border: 1px solid black;
+            padding: 10px;
+            }
+
+            header {
+            height: 20%;
+            }
+
+            section {
+            display: flex;
+            height: 65%;
+            overflow: auto;
+            }
+
+            footer {
+            height: 15%;
+            display: flex;
+            align-items: center;
+            }
+            #home {
+                
+                text-decoration: none;
+                color: black;
+            }
+            hr {
+                background-color: black;
+                height: 1px;
+                margin-left: 0px;
+                margin-top: 1.1em;
+            }
+            .page_load {
+                display: inline-block;
+                text-decoration: none;
+                color: black;
+                font-weight: 700;
+                margin: 1.5em;
+            }
+            #site {
+                font-size: 20px;
+                font-weight: 900;
+            }
+            .sup {
+                margin-left: 50px;
+                margin-right: 0px;
+            }
+            input {
+                margin: 20pxs;
+            }
+            #age {
+                margin-left: 15px;
+                width: 300px;
+                border: 2px solid skyblue;
+            }
+            #labelfix {
+                display: flex;
+
+            }
+            .BT {
+                width: 100px;
+                height: 40px;
+            }
+            @keyframes ani{ /*그냥 만들어보는 animation, 평가자가 부정적 의견에 체크하려고 하면 사진의 크기가 커진다.*/
+                0% {width: 80px; height: 80px;}
+                30%{width: 80px; height: 80px;}
+                100% { width: 120px; height: 120px;}
+            }
+            
+            .bad:hover{
+                animation-name: ani;
+                animation-duration: 5s;
+                animation-iteration-count: infinite;
+            }
+            
+            
+            .BT:hover { /*그냥 만들어보는 pseduo-class*/
+                background-color: aqua;
+                color: red;
+            }
+            #teamnm{
+                background-color: rgb(201, 193, 193);
+                position: fixed;
+                width: 2em;
+                height: 2em;
+                right: 10px;
+                bottom: 10px;
+                text-align: center;
+                border: 1px solid black;
+                border-radius: 20%;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div>
+                <a id="home" href="index.html" target="_self">홈으로/처음으로</a>
+            </div><hr>
+            <h1>평가</h1>
+        </header>
+        <section>
+            <!--폼의 각 value들을 index.html로 보내줌. saveFeedback은 아래의 JS코드에서 설명-->
+            <form onsubmit="saveFeedback(event)" method="get" action="index.html" name="posting" target="_self">
+                
+                <!--폼의 설문조사 내용들-->
+                <label>
+                    나이 <input id="age" name="age" type="number" placeholder="본인의 만 나이를 입력하세요 ex&#41; 20">
+                </label><br><hr>
+                <h2>해당 웹 페이지가 유용하셨습니까?</h2>
+                <label>
+                    <img class="bad" src="로컬사진/verydisagree.jpg" alt="매우 비동의" width="80px" height="80px">
+                    매우 비동의 <input type="radio" name="utility" value="1">
+                </label>
+                <label>
+                    <img class="bad" src="로컬사진/disagree.jpg" alt="비동의" width="80px" height="80px">
+                    비동의 <input type="radio" name="utility" value="2">
+                </label>
+                <label>
+                    <img src="로컬사진/normal.jpg" alt="보통" width="80px" height="80px">
+                    보통 <input type="radio" name="utility" value="3" checked>
+                </label>
+                <label>
+                    <img src="로컬사진/agree.jpg" alt="동의" width="80px" height="80px">
+                    동의 <input type="radio" name="utility" value="4">
+                </label>
+                <label>
+                    <img src="로컬사진/veryagree.jpg" alt="매우 동의" width="80px" height="80px">
+                    매우 동의 <input type="radio" name="utility" value="5"><br><hr>
+                </label>
+                
+                <h2>해당 웹 페이지의 이용이 편리했습니까?</h2>
+                <label>
+                    <img class="bad" src="로컬사진/verydisagree.jpg" alt="매우 비동의" width="80px" height="80px">
+                    매우 비동의 <input type="radio" name="convenient" value="1">
+                </label>
+                <label>
+                    <img class="bad" src="로컬사진/disagree.jpg" alt="비동의" width="80px" height="80px">
+                    비동의 <input type="radio" name="convenient" value="2">
+                </label>
+                <label>
+                    <img src="로컬사진/normal.jpg" alt="보통" width="80px" height="80px">
+                    보통 <input type="radio" name="convenient" value="3" checked>
+                </label>
+                <label>
+                    <img src="로컬사진/agree.jpg" alt="동의" width="80px" height="80px">
+                    동의 <input type="radio" name="convenient" value="4">
+                </label>
+                <label>
+                    <img src="로컬사진/veryagree.jpg" alt="매우 동의" width="80px" height="80px">
+                    매우 동의 <input type="radio" name="convenient" value="5"><br><hr>
+                </label>
+                <label id="labelfix" for="fix">개선할 점</label>
+                <textarea id="fix" name="fixes" cols="220" rows="10" placeholder="기능의 이용이 어려웠던 부분, 도움말에서 내용이 부실하다고 느꼈던 부분 등에 대해 적어주세요."></textarea><br><br>
+                <button class="BT" type="submit">제출</button>
+                <button class="BT" type="reset">초기화</button>
+            </form>
+        </section>
+
+        <!--관련 사이트 이동-->
+        <footer>
+            <span id="site">관련사이트</span>
+            <a href="http://www.bxt.co.kr/express_bus.html" target="_blank">
+                <img class="sup" src="http://www.bxt.co.kr/img/logo3.png" alt="부산종합버스터미널주식회사">
+            </a>
+            <a href="https://bus.busan.go.kr/" target="_blank">
+                <img class="sup" src="https://bus.busan.go.kr/busanBIMS/img/logo.jpg" alt="부산시내버스정보페이지">
+            </a>
+            <a href="https://www.bus.or.kr/support/route.asp" target="_blank">
+                <img class="sup" src="https://www.bus.or.kr/images/common/logo.jpg" alt="전국버스운송산업조합">
+            </a>
+            <a href="https://plato.pusan.ac.kr/" target="_blank">
+                <img class="sup" src="https://plato.pusan.ac.kr/theme/image.php/coursemosv2/theme_coursemosv2/1745217358/login/logo" alt="부산대플라토토">
+            </a>
+            <span id="teamnm">팀5</span>
+        </footer>
+        <script>
+        //localstorage를 사용하여 feedbacks변수에 기존 localstorage정보 담기. 폼의 새 value들을 feedbacks에 추가하고 저장한 후 index.html로 이동
+        function saveFeedback(e) {
+            e.preventDefault();            
+            const form = e.target;
+            const feedbacks = JSON.parse(localStorage.getItem("feedbacks") || "[]");
+
+            feedbacks.push({
+                age: form.age.value,
+                utility: form.utility.value,
+                convenient: form.convenient.value,
+                fixes: form.fixes.value
+            });
+
+            localStorage.setItem("feedbacks", JSON.stringify(feedbacks));
+            window.location.href = "index.html";
+        }
+        </script>
+    </body>
+</doctype>

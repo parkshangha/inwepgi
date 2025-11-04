@@ -1,0 +1,186 @@
+<doctype html>
+    <head>
+        <title>도움말</title>
+        <meta name="description" content="사용법에 대한 간단한 설명">
+        <style>
+            dt {
+                font-size: larger;
+                font-weight: 600;
+            }
+            * { /*index.html과 95% 정도는 style이 같음*/
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Noto Sans KR", "Nanum Gothic", "나눔고딕", NanumGothic, "돋움", dotum, Helvetica, sans-serif, AppleGothic;;
+            }
+
+            body, html {
+            height: 100%;
+            }
+
+            header, nav, section, footer {
+            border: 1px solid black;
+            padding: 10px;
+            }
+
+            header {
+            height: 20%;
+            }
+
+            main {
+            display: flex;
+            height: 65%;
+            }
+
+            nav {
+            width: 20%;
+            background-color: aliceblue;
+            }
+
+            section {
+            width: 80%;
+            overflow: auto;
+            }
+
+            footer {
+            height: 15%;
+            display: flex;
+            align-items: center;
+            }
+            #home {
+                
+                text-decoration: none;
+                color: black;
+            }
+            hr {
+                background-color: black;
+                height: 1px;
+                margin-left: 0px;
+                margin-top: 1.1em;
+            }
+            .page_load {
+                display: inline-block;
+                text-decoration: none;
+                color: black;
+                font-weight: 700;
+                margin: 1.5em;
+            }
+            #site {
+                font-size: 20px;
+                font-weight: 900;
+            }
+            .sup {
+                margin-left: 50px;
+                margin-right: 0px;
+            }
+            #teamnm{
+                background-color: rgb(201, 193, 193);
+                position: fixed;
+                width: 2em;
+                height: 2em;
+                right: 10px;
+                bottom: 10px;
+                text-align: center;
+                border: 1px solid black;
+                border-radius: 20%;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div>
+                <a id="home" href="index.html" target="_self">홈으로/처음으로</a>
+            </div><hr>
+            <h1>도움말</h1>
+        </header>
+        <main>
+            <nav>
+                <h3>목차</h3>
+                <div>
+                    <!--목차의 역할을 하면서 앵커(페이지 내 다른 부분으로 이동)의 역할을 한다.-->
+                    <a href="#first_manual">1.정류장 조회, 지도 이동 사용법</a><br>
+                    <a href="#second_manual">2.시외버스 예매 방법</a><br>
+                    <a href="#third_manual">3.엑셀 파일 번호조회방법</a><br>
+                    <a href="#fourth_manual">4.평가 페이지 유의점</a><br>
+                    <a href="#fifth_manual">5.naver어학사전 사용법</a>
+                </div><br>
+                
+                <!--index.html에 있던 것과 같음-->
+                <h3>naver어학사전 연결</h3>
+                <form name="dictsearch" method="get" action="https://dict.naver.com/dict.search" target="_blank">
+                    <label>
+                        검색 할 단어를 입력하세요 <input name="query" type="text">
+                    </label>    
+                    <button type="submit">제출</button>
+                </form>
+            </nav>
+
+            <!--웹 페이지의 기능들을 사용하는 방법에 대한 내용을 나열했다. 시각자료 사용. 크게 중요한 태그나 기능은 없다.-->
+            <section>
+                <h1 id="first_manual">정류장 조회, 지도 이동 사용법</h1>
+                <p>
+                    버스의 정류장에 대한 정보를 알려드립니다.<br>
+                    버스 정류장의 이름의 일부를 입력하시면 해당 단어를 포함하는 모든 결과를 아래의 빈칸에 나열합니다.<br>
+                    예를 들어 '부산'이라는 단어를 입력한다면 아래의 결과가 나올 것 입니다.<br>
+                    <img src="로컬사진/정류장조회.png" alt="정류장조회결과" width="1000" height="400" style="border: 1px solid gray;"><br>
+                    여기서 '정류장'은 정류장의 이름을 말하고, X는 해당 정류장의 경도, Y는 해당 정류장의 위도를 의미합니다.<br>
+                    위도와 경도는 이어서 설명할 '이동하기' 기능에서 중요한 정보이고 외워서 쓰기는 어려우니 복사해서 다른 곳에 붙여놓아 두는 것이 좋습니다.<br>
+                    정류장 정보 출력 위치의 아래의 지도는 확대, 축소, 이동이 가능한 지도입니다.<br>
+                    지도 아래에 있는 '이동하기'버튼을 클릭하면 컴퓨터가 gpsx와 gpsy를 물을 것 입니다.<br> 
+                    이전에 복사해둔 정류장의 X,Y를 각각 붙여넣어 주면 해당 위치로 이동 후 적절하게 확대 될 것입니다.<br>
+                </p><br>
+                <h1 id="second_manual">시외버스 예매 방법</h1>
+                <p>
+                    메인 페이지의 '시외버스예매사이트'를 클릭하고 시외버스 예매 사이트 '버스타고'로 이동합니다.<br>
+                    <img src="로컬사진/버스타고.png" alt="버스타고" width="500" height="250"><br>
+                    해당 페이지의 상단에 '승차권 예매-예매/발권'으로 표시된 상자를 눌러 승차권 예매 폼으로 이동합니다.<br>
+                    해당 폼에 본인의 의도에 맞게 정보를 입력하고 '조회하기'버튼을 클릭합니다.<br>
+                    정상적으로 위의 과정을 진행하면 해당 페이지의 아래에 예약 가능한 버스들의 정보가 표시되고 예약을 할 수 있게 됩니다.<br>
+                    이후, 좌석선택을 하면 어떤 방식으로 예매를 진행 할 지가 나오는데 비회원 예매도 가능하니 원하는 방법을 선택하면 됩니다.<br>
+                    다음으로, 예매에 대한 개인 정보 폼의 입력을 마치고 결제를 진행하면 예매 진행은 끝납니다.
+                </p><br>
+                <h1 id="third_manual">엑셀 파일 번호조회방법</h1>
+                <p>
+                    성공적으로 엑셀 파일이 화면에 나타날시 오른쪽 상단 [Y2:Z3]영역에 번호조회 라는 버튼이 존재 할 것입니다.<br>
+                    해당 버튼을 클릭할 시 아래의 사진이 나타납니다.<br>
+                    <img src="로컬사진/버튼입력시.png" alt="버튼클릭시화면" width="450" height="250"><br>
+                    '버스번호'입력란에 조회하고자 하는 번호를 입력하고 '조회'버튼을 클릭하면 버스번호가 있는 행으로 이동 할 것입니다.<br>
+                    하지만 존재하지 않는 번호를 입력 할 시에는 [Y4]영역에 빨간 글씨로 "찾으시는 번호가 없습니다"가 출력될 것입니다.<br>
+                    <img src="로컬사진/조회실패.png" alt="조회실패화면" width="500" height="200"><br>
+                    (심야sheet의 경우 행수가 적으므로 조회 기능을 넣지 않았습니다.)
+                </p><br>
+                <h1 id="fourth_manual">평가 페이지 유의점</h1>
+                <p>
+                    평가 페이지는 저희가 제공하는 서비스에 대한 만족도를 묻습니다.<br>
+                    나이를 제외한 개인 정보는 묻지 않으므로 걱정 할 필요는 없습니다.<br>
+                    하단에는 '제출'버튼과 '초기화'버튼이 있습니다. '초기화'버튼은 썼던 내용들을 모두 지우고 새로 쓸 때 사용합니다.<br>
+                    제출 버튼을 누를 시 작성한 내용이 메인 페이지의 '평가 페이지에서 접수된 의견들'로 옮겨집니다.<br>
+                </p><br>
+                 <h1 id="fifth_manual">naver어학사전 사용법</h1>
+                 <p>
+                    'naver어학사전 연결'은 메인 페이지와 '도움말' 페이지에만 있습니다.<br>
+                    해당 기능은 제공되는 서비스에서 이해가 되지 않는 단어를 편하게 검색 할 수 있게 하려고 제공하였습니다.<br>
+                    검색 글상자에 검색하고자 하는 단어를 입력한 후 제출 버튼을 누르면 해당 단어가 검색된 어학사전으로 이동합니다.<br>
+                 </p>
+            </section>
+        </main>
+
+        <!--index.html에도 있던 관련사이트로 이동-->
+        <footer>
+            <span id="site">관련사이트</span>
+            <a href="http://www.bxt.co.kr/express_bus.html" target="_blank">
+                <img class="sup" src="http://www.bxt.co.kr/img/logo3.png" alt="부산종합버스터미널주식회사">
+            </a>
+            <a href="https://bus.busan.go.kr/" target="_blank">
+                <img class="sup" src="https://bus.busan.go.kr/busanBIMS/img/logo.jpg" alt="부산시내버스정보페이지">
+            </a>
+            <a href="https://www.bus.or.kr/support/route.asp" target="_blank">
+                <img class="sup" src="https://www.bus.or.kr/images/common/logo.jpg" alt="전국버스운송산업조합">
+            </a>
+            <a href="https://plato.pusan.ac.kr/" target="_blank">
+                <img class="sup" src="https://plato.pusan.ac.kr/theme/image.php/coursemosv2/theme_coursemosv2/1745217358/login/logo" alt="부산대플라토토">
+            </a>
+            <span id="teamnm">팀5</span>
+        </footer>
+    </body>
+</doctype>
